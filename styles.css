@@ -89,7 +89,10 @@ header h1 {
     text-overflow: clip;
     font-family: 'Noto Serif JP', serif;
     letter-spacing: 0.2em;
+    z-index: 10; /* z-indexを設定 */
+    position: relative; /* z-indexを有効にするためにpositionを設定 */
     animation: fadeIn 2s ease-in-out;
+    line-height: 1.5; /* 行間を調整 */
 }
 
 .contact-button {
@@ -204,7 +207,6 @@ img {
         display: none; /* PCビューではハンバーガーメニューを非表示 */
     }
     header h1 {
-        margin-top: 1rem; /* 上に余白を追加 */
         text-align: center;
         font-size: 1.5rem;
         color: #fff;
@@ -704,10 +706,21 @@ form input {
         margin-top: -280px;
         left: 0;
         z-index: 3; /* overlayの上に表示 */
+        display: flex;
+        flex-direction: column; /* 縦並びにする */
+        align-items: center; /* 中央揃えにする */
+        justify-content: center; /* 縦中央に揃える */
+        width: 100%;
+        box-sizing: border-box; /* パディングを含めて幅を計算 */
+        padding: 0 1rem; /* 左右に余白を追加 */
     }
+        
+        
+    
+
     header h1 {
         font-size: 3.5vw; /* フォントサイズを調整 */
-        margin-top: -5rem; /* 上に余白を追加 */
+        margin-top: -2rem; /* 上に余白を追加 */
         order: 2; /* お問合せボタンの下に配置 */
         position: absolute; /* overlay内に配置 */
         z-index: 2; /* overlayの上に表示 */
@@ -816,7 +829,7 @@ form input {
     nav {
         display: none; /* ナビゲーションメニューを非表示 */
     }
-
+}
 
 
     .some-class {
@@ -835,8 +848,8 @@ form input {
     .scroll-infinity__item img {
         width: 100%;
         height: auto;
-
 }
+
 
 .scroll {
     color: #ffffff;
