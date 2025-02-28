@@ -114,7 +114,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center; /* ナビゲーションメニューを中央に配置 */
-    padding-right: 150px; /* お問合せボタンと被らないように右に余白を追加 */
     margin-top: 0; /* 上の余白を削除 */
 }
 
@@ -578,8 +577,11 @@ form input {
     }
     }
     .scroll-infinity__wrap {
-      display: flex;
-      overflow: hidden;
+        display: flex;
+        overflow: hidden;
+        position: relative; /* 位置を相対的に設定 */
+        width: 100vw; /* 幅を画面全体に設定 */
+        left: 0; /* 左端からスタート */
     }
     .scroll-infinity__list {
       display: flex;
@@ -775,22 +777,43 @@ form input {
         pointer-events: auto; /* クリックイベントを有効にする */
 
     }
+    .close-menu {
+        display: none; /* 初期状態では非表示 */
+        position: absolute;
+        top: 0rem;
+        right: 1rem;
+        font-size: 4rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1001; /* メニューの上に表示 */
+    }
+    #nav-menu.show + .close-menu {
+        display: block; /* メニューが表示されたときに表示 */
+    }
+    
     nav {
         display: none; /* ナビゲーションメニューを非表示 */
     }
     #nav-menu.show {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.8);
         position: absolute;
-        top: 60px;
+        top: 0;
         right: 0;
+        width: 100%; /* 幅を100%に設定 */
+        display: flex;
+        justify-content: center; /* 横方向に中央揃え */
+        flex-direction: column; /* 縦並びにする */
+        align-items: center; /* 中央揃えにする */
         z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.8); /* 背景色を設定 */
+        padding-top: 60px; /* 上からの間隔を開ける */
+        padding-bottom: 60px; /* 下からの間隔を開ける */
+        
     }
     #nav-menu.show ul {
         flex-direction: column;
         padding: 0;
+        width: 100%; /* 幅を100%に設定 */
+        text-align: center; /* テキストを中央揃え */
     }
     #nav-menu.show ul li {
         margin: 1rem 0;
@@ -799,6 +822,7 @@ form input {
 
     .social-links {
         position: absolute;
+        bottom: -18rem; /* 下に配置 */
         right: 1rem; /* 右に配置 */
         z-index: 5; /* 他の要素の上に表示 */
         pointer-events: auto; /* クリックイベントを有効にする */
