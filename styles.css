@@ -149,18 +149,34 @@ nav ul li a {
     padding: 0;
     margin: 0;
 }
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 .class-item {
     width: 100%;
     margin-bottom: 1rem;
 }
 
+.close-menu {
+    display: none; /* 初期状態では非表示 */
+    position: absolute;
+    top: 0rem;
+    right: 1rem;
+    font-size: 4rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* メニューの上に表示 */
+}
+
+#nav-menu.show + .close-menu {
+    display: block; /* メニューが表示されたときに表示 */
+}
+
+
 /* PCビュー用のスタイル */
 @media (min-width: 769px) {
+    .close-menu {
+        display: none; /* PCビューでは非表示 */
+    }
+
     .header-content {
         flex-direction: column; /* 縦並びにする */
         align-items: center; /* 縦中央に揃える */
@@ -853,7 +869,7 @@ form input {
     nav {
         display: none; /* ナビゲーションメニューを非表示 */
     }
-}
+
 
 
     .some-class {
@@ -870,8 +886,10 @@ form input {
         width: 100vw;
     }
     .scroll-infinity__item img {
-        width: 100%;
-        height: auto;
+        .scroll-infinity__item img {
+            width: 100%; /* 幅を100%に設定 */
+            height: auto;
+            margin: 0 10px; /* 左右に隙間を空ける */
 }
 
 
@@ -909,6 +927,7 @@ form input {
     right: 0;
     width: 1px;
   }
+}
   /* 線のアニメーション */
   @keyframes scroll {
     0% {
