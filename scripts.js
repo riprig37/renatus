@@ -1,16 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('#nav-menu a');
+    const closeMenu = document.getElementById('close-menu'); // 閉じるバツボタンを取得
+
 
     hamburger.addEventListener('click', function() {
         navMenu.classList.toggle('show');
+        closeMenu.classList.toggle('show'); // 閉じるバツボタンの表示を切り替え
+    });
+    closeMenu.addEventListener('click', function() {
+        navMenu.classList.remove('show');
+        closeMenu.classList.remove('show'); // 閉じるバツボタンを非表示
     });
 
-    // ナビゲーションリンクのクリックイベント
+    const navLinks = document.querySelectorAll('#nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('show'); // メニューを閉じる
+            closeMenu.classList.remove('show'); // 閉じるバツボタンを非表示
         });
     });
 
