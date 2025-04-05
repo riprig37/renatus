@@ -650,60 +650,7 @@ form input {
     cursor: pointer;
   }
 
-/*
-@keyframes infinity-scroll-left {
-    from {
-      transform: translateX(0);
-    }
-      to {
-      transform: translateX(-100%);
-    }
-    }
 
-    
-    .scroll-infinity__wrap {
-        display: flex;
-        overflow: hidden;
-        position: relative;  位置を相対的に設定 */
-        width: 100vw; /* 幅を画面全体に設定 */
-        left: 0; /* 左端からスタート 
-    }
-    .scroll-infinity__list {
-      display: flex;
-      list-style: none;
-      padding: 0
-    }
-    .scroll-infinity__list--left {
-      animation: infinity-scroll-left 10s infinite linear 0.5s both;
-    }
-
-    .scroll-infinity__wrap:hover .scroll-infinity__list--right{
-        animation-play-state: paused;
-      }
-
-    .scroll-infinity__item {
-      width: calc(100vw / 6);
-    }
-    .scroll-infinity__item>img {
-      width: 100%;
-    }
-    .scroll-infinity__wrap:hover .scroll-infinity__list--right{
-        animation-play-state: paused;
-      }
-
-  @keyframes loop-slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
-@keyframes fadeEffect {
-    from {opacity: 0.4}
-    to {opacity: 1}
-}*/
 
 .instructor {
     text-align: center;
@@ -1016,6 +963,4 @@ form input {
       transform-origin: 0 100%;
     }
   }
-  
-  
-  
+}
