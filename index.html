@@ -14,7 +14,7 @@
     <header>
         <div class="video-container">
             <video autoplay muted loop id="bg-video">
-                <source src="path/to/sample.mp4" type="video/mp4">
+                <source src="path/to/movie.mp4" type="video/mp4">
                 お使いのブラウザは動画タグをサポートしていません。
             </video>
             <div class="social-links">
@@ -38,7 +38,7 @@
                         </ul>
                     </nav>
                     <div class="close-menu" id="close-menu">&times;</div> <!-- 閉じるバツボタンを追加 -->
-                    <a href="#contact" class="contact-button">お問合せはこちら</a>
+                    <a href="#contact" class="contact-button">お問合せ、体験、<br>出稽古希望の方はこちら</a>
                     <div class="hamburger" id="hamburger">
                         <span></span>
                         <span></span>
@@ -53,9 +53,53 @@
 </header>
     
     <main>
-        
-        <div class="scroll-infinity">
-            <h2>ギャラリー</h2>
+        <h2>ギャラリー</h2>
+        <div class="wrap slide-paused" ontouchstart="">
+			<ul class="slideshow">
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+                </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			</ul>
+			<ul class="slideshow">
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			</ul>
+			<ul class="slideshow">
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			  <li class="slide-content slide-content-hover">
+                <img src="path/to/tomato.jpg" alt="Tomato" />
+              </li>
+			</ul>
+		  </div>
+       <!--
+          <div class="scroll-infinity">
             <div class="scroll-infinity__wrap">
               <ul class="scroll-infinity__list scroll-infinity__list--left">
                 <li class="scroll-infinity__item"><img src="sample.png" /></li>                        
@@ -74,7 +118,7 @@
                 <li class="scroll-infinity__item"><img src="sample.png" /></li>
               </ul>
             </div>
-            </div>
+            </div>-->
 
             <section id="about" class="section">
 
@@ -92,7 +136,7 @@
                 <section class="instructor">
                     <h3>講師</h3>
                     <div class="instructor-info">
-                        <figure><img src="path/to/team2.jpg" alt="takasi"></figure>
+                        <figure><img src="path/to/sensei.jpg" alt="takasi"></figure>
                         <p><strong>佐藤　孝</strong><br>ブラジリアン柔術黒帯 2010年アジア選手権　優勝<br><a href="https://ja-jp.facebook.com/takashi.satou.5494/">Facebookはこちらから</a></p>
                     </div>
                 </section>
@@ -133,7 +177,7 @@
                         <table>
                             <tr>
                                 <th>月会費</th>
-                                <td>9,000円</td>
+                                <td>9,220円</td>
                                 <th>入会金</th>
                                 <td>15,000円</td>
                             </tr>
@@ -143,7 +187,7 @@
             </section>
             
             <section class="list">
-                <h4>学生（大学生以下）</h4>
+                <h4>学生（23歳以下）</h4>
                 <div class="content-wrapper">
                     <figure><img src="path/to/sample12.jpg" alt="写真の説明"></figure>
                     <div class="text-table-wrapper">
@@ -151,9 +195,9 @@
                         <table>
                             <tr>
                                 <th>月会費</th>
-                                <td>7,700円</td>
+                                <td>8,220円</td>
                                 <th>入会金</th>
-                                <td>10,000円</td>
+                                <td>15,000円</td>
                             </tr>
                         </table>
                     </div>
@@ -178,7 +222,7 @@
                 </div>
             </section>
         
-            <button id="more-btn-price">もっと見る</button>
+            <button id="more-btn-price">入会について詳しくはこちら</button>
             <div id="more-content-price" style="display: none;">
                 <h3>入会に必要なもの（必要書類等は道場で渡します）</h3>
                 <p>●入会金<br>
@@ -193,10 +237,7 @@
                 <p>休会制度はありません。稽古を中止される方は引き落とし手続きがありますので前月の10日までに来館して手続きをしてください。<br>
                 電話、メール、郵送等による退会手続きは一切できません。<br>
                 未納会費がある場合は来館時にご精算してください。<br>来館できない正当な理由がある場合に限り、代理人か郵送による提出が認められます。</p>
-            
-                <h3>出稽古について</h3>
-                <p>会員以外の出稽古練習は可能です。1回の料金3,000円が必要になります。<br>
-                出稽古に来られる前に一度事前に、ご連絡をお願いします。</p>
+
             </div>
         </section>
 
@@ -214,8 +255,11 @@
     </div>
 </section>
 
-<section id="contact" class="section"></section>
-                        <h2>お問合せ</h2>
+<section id="contact" class="section">
+                        <h2>お問合せ、体験、出稽古希望について</h2>      
+            <p>体験、出稽古希望の方は、下記のフォームからお問合せください。
+                <h3>体験について</h3>料金1000円　1週間以内に入会手続き完了で入会金14,000円
+                <br>体験は無料です。<br>出稽古希望の方は、道場名、代表者名、人数を明記してください。</p>
             <form>
                 <label for="name">名前:</label>
                 <input type="text" id="name" name="name" required>
