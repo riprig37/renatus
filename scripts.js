@@ -1,66 +1,39 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
-    const closeMenu = document.getElementById('close-menu'); // 閉じるバツボタンを取得
 
-
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('show');
-        closeMenu.classList.toggle('show'); // 閉じるバツボタンの表示を切り替え
-    });
-    closeMenu.addEventListener('click', function() {
-        navMenu.classList.remove('show');
-        closeMenu.classList.remove('show'); // 閉じるバツボタンを非表示
+    // ハンバーガーメニューをクリックしたときの動作
+    hamburger.addEventListener('click', function () {
+        navMenu.classList.toggle('show'); // メニューの表示/非表示を切り替え
+        hamburger.classList.toggle('open'); // ハンバーガーアイコンの状態を切り替え
     });
 
+    // ナビゲーションリンクをクリックしたときの動作
     const navLinks = document.querySelectorAll('#nav-menu a');
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             navMenu.classList.remove('show'); // メニューを閉じる
-            closeMenu.classList.remove('show'); // 閉じるバツボタンを非表示
+            hamburger.classList.remove('open'); // ハンバーガーアイコンを元に戻す
         });
     });
 
-    // aboutセクションのもっと見るボタンのクリックイベント
-    const moreBtnAbout = document.getElementById('more-btn-about');
-    const moreContentAbout = document.getElementById('more-content-about');
-    if (moreBtnAbout && moreContentAbout) {
-        moreBtnAbout.addEventListener('click', function() {
-            if (moreContentAbout.style.display === 'none' || moreContentAbout.style.display === '') {
-                moreContentAbout.style.display = 'block';
-                this.textContent = '閉じる';
-            } else {
-                moreContentAbout.style.display = 'none';
-                this.textContent = 'もっと見る';
+    // IntersectionObserverでアニメーションを適用
+    const targets = document.querySelectorAll("h2, #about h3, #about p");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
             }
         });
-    }
+    });
 
-    // priceセクションのもっと見るボタンのクリックイベント
-    const moreBtnPrice = document.getElementById('more-btn-price');
-    const moreContentPrice = document.getElementById('more-content-price');
-    if (moreBtnPrice && moreContentPrice) {
-        moreBtnPrice.addEventListener('click', function() {
-            if (moreContentPrice.style.display === 'none' || moreContentPrice.style.display === '') {
-                moreContentPrice.style.display = 'block';
-                this.textContent = '閉じる';
-            } else {
-                moreContentPrice.style.display = 'none';
-                this.textContent = 'もっと見る';
-            }
-        });
-    }
-
-    const footer = document.getElementById('footer');
-    const threshold = 100; // 必要に応じてこの値を調整
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > threshold) {
-            footer.style.position = 'fixed';
-            footer.style.bottom = '0';
-            footer.style.width = '100%';
-        } else {
-            footer.style.position = 'relative';
+    targets.forEach((target) => observer.observe(target));
+});
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
         }
     });
 });
+observer.observe(document.querySelector('#about'));
