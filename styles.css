@@ -222,20 +222,7 @@ nav ul li a:hover {
     margin-bottom: 1rem;
 }
 
-.close-menu {
-    display: none; /* 初期状態では非表示 */
-    position: absolute;
-    top: 0rem;
-    right: 1rem;
-    font-size: 4rem;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1001; /* メニューの上に表示 */
-}
 
-#nav-menu.show + .close-menu {
-    display: block; /* メニューが表示されたときに表示 */
-}
 
 
     .close-menu {
@@ -282,11 +269,6 @@ nav ul li a:hover {
         color: #fff;
         text-decoration: none;
     }
-
-    .hamburger {
-        display: none; /* PCビューではハンバーガーメニューを非表示 */
-    }
-
 
 
 #bg-video {
@@ -804,13 +786,6 @@ table tr:nth-child(even) td {
     font-weight: bold; /* 太字にする */
 }
 
-#more-content {
-    display: none;
-}
-
-#more-content.show {
-    display: block;
-}
 
 .map-container {
     width: 80%; /* 幅を80%に設定 */
@@ -1193,13 +1168,10 @@ form button {
         margin-top: 0; /* 上の余白を削除 */
         top: 1rem; /* 上に配置 */
         right: 1rem; /* 右に配置 */
-        z-index: 1001; /* 他の要素より前面に表示 */
         position: absolute; /* 絶対位置に設定 */
         flex-direction: column;
         cursor: pointer;
         pointer-events: auto; /* クリックイベントを有効にする */
-        display: flex;
-        flex-direction: column;
         justify-content: space-between;
         width: 30px;
         height: 20px;
@@ -1217,25 +1189,21 @@ form button {
     }
     .hamburger.open span {
         opacity: 0; /* 透明にして非表示 */
-        visibility: hidden; /* 視覚的に隠す */
     }
 
-    /* メニューが開いたときのバツスタイル */
     .hamburger.open span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
     
     .hamburger.open span:nth-child(2) {
-        opacity: 0;
+        opacity: 0; /* ここを確認 */
     }
     
     .hamburger.open span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
     /* ハンバーガーメニューの表示を制御 */
-    #nav-menu {
-        display: none; /* 初期状態で非表示 */
-    }
+
     
     #nav-menu.show {
         display: flex; /* メニューを表示 */
@@ -1343,30 +1311,7 @@ form button {
     
     
     
-    
-    /* ハンバーガーメニューの表示を制御 */
-    #nav-menu.show {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.8);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        z-index: 1000;
-        text-align: center; /* テキストを中央揃えにする */
-    }
-    
-    #nav-menu.show ul {
-        flex-direction: column;
-        padding: 0;
-        align-items: center; /* リストアイテムを中央揃えにする */
-    }
-    
-    #nav-menu.show ul li {
-        margin: 1rem 0;
-    }
-    
+
 
     /* クラス情報のスタイル */
     .two-column {
@@ -1436,14 +1381,8 @@ form button {
         margin-bottom: 0.5rem; /* アイコンと文字の間に余白を追加 */
         animation: float 1.5s ease-in-out infinite; /* アニメーションを適用 */
     }
-        .wrap, /* スライド全体のコンテナ */
-        .slideshow, /* スライドショーのリスト */
-        .slide-content { /* 各スライドの要素 */
-            display: none; /* 非表示に設定 */
-        }
-        .hide-on-mobile {
-            display: none; /* 非表示に設定 */
-        }
+
+
     .list {
         text-align: center;
         border: 2px solid #ccc;
@@ -1584,19 +1523,7 @@ form button {
         margin-right: 30px; /* 要素間の間隔を30pxに設定 */
       }
      
-      .slide-content:nth-child(1) {
-        background-color: tomato;
-      }
-      .slide-content:nth-child(2) {
-        background-color: orange;
-      }
-      .slide-content:nth-child(3) {
-        background-color: blue;
-      }
-      .slide-content:nth-child(4) {
-        background-color: green;
-      }
-    
+
     /* スライドレールの枠 */
     .wrap {
         overflow: hidden;
@@ -1628,24 +1555,7 @@ form button {
           transform: translateX(-100%);
         }
       }
-      /* ホバー時に動きを止める（パターン2・3）*/
-      .slide-paused:hover .slideshow {
-        -webkit-animation-play-state: paused;
-        animation-play-state: paused;
-      }
-      /* ホバー時の装飾（パターン3） */
-      .slide-content-hover {
-        transition: all 0.2s;
-        margin-right: 20px;
-      }
-      .slide-content-hover:hover {
-        transform: translateY(-20px);
-        border-radius: 0 10%;
-        box-shadow: 0 3px 10px 0 #333;
-        opacity: 0.8;
-        cursor: pointer;
-      }
-    
+
     
     
     .instructor {
@@ -1687,19 +1597,7 @@ form button {
         font-weight: bold;
     }
     
-    #more-content {
-        display: none;
-        opacity: 0.5; /* 透明度を設定 */
-        transition: opacity 0.5s ease, visibility 0.5s ease; /* 透明度と表示の変化をスムーズに */
-        visibility: hidden; /* 初期状態では非表示 */
-    }
-    
-    #more-content.show {
-        display: block;
-        opacity: 1; /* 透明度を変更 */
-        visibility: visible; /* 表示 */
-    }
-    
+
 
     
     #classes nav ul li a {
@@ -1709,47 +1607,9 @@ form button {
         padding: 1rem 0; /* 上下のパディングを追加 */
         margin-top: 2rem; /* 上に余白を追加 */
     }
-    .close-menu {
-        display: none; /* 初期状態では非表示 */
-        position: absolute;
-        top: 0rem;
-        right: 1rem;
-        font-size: 4rem;
-        color: #fff;
-        cursor: pointer;
-        z-index: 2001; /* メニューの上に表示 */
-    }
-    #nav-menu.show + .close-menu {
-        display: block; /* メニューが表示されたときに表示 */
-    }
-    
-    nav {
-        display: none; /* ナビゲーションメニューを非表示 */
-    }
-    #nav-menu.show {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%; /* 幅を100%に設定 */
-        display: flex;
-        justify-content: center; /* 横方向に中央揃え */
-        flex-direction: column; /* 縦並びにする */
-        align-items: center; /* 中央揃えにする */
-        z-index: 1000;
-        background-color: rgba(0, 0, 0, 0.8); /* 背景色を設定 */
-        padding-top: 60px; /* 上からの間隔を開ける */
-        padding-bottom: 60px; /* 下からの間隔を開ける */
-        
-    }
-    #nav-menu.show ul {
-        flex-direction: column;
-        padding: 0;
-        width: 100%; /* 幅を100%に設定 */
-        text-align: center; /* テキストを中央揃え */
-    }
-    #nav-menu.show ul li {
-        margin: 1rem 0;
-    }
+
+
+
 
 
 
